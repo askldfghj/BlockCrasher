@@ -30,13 +30,20 @@ public class BlockControll : MonoBehaviour {
     {
         if (IsCrash)
         {
-            GameObject item = Instantiate(ItemObj,
-                                       new Vector3(gameObject.transform.position.x,
-                                                   gameObject.transform.position.y,
-                                                   gameObject.transform.position.z-1),  
-                                       gameObject.transform.rotation) as GameObject;
-
+            if (ItemObj != null)
+            {
+                GameObject item = Instantiate(ItemObj,
+                                           new Vector3(gameObject.transform.position.x,
+                                                       gameObject.transform.position.y,
+                                                       gameObject.transform.position.z - 1),
+                                           gameObject.transform.rotation) as GameObject;
+            }
             Destroy(gameObject);
         }
+    }
+
+    public void SetItem(GameObject item)
+    {
+        ItemObj = item;
     }
 }

@@ -16,7 +16,7 @@ public class GameLoader : MonoBehaviour {
         {
             for (int j = 4; j >= 1; j--)
             {
-                Instantiate(Blocks[j], new Vector2(i, (j*0.3f+3)), new Quaternion());
+                Instantiate(Blocks[j], new Vector2(i*0.964f, (j*0.31f+3)), new Quaternion());
             }
         }
         
