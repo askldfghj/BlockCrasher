@@ -94,7 +94,7 @@ public class PlainCotroller : MonoBehaviour {
 
     void Awake()
     {
-        BallobjList = new List<GameObject>(3);
+        BallobjList = new List<GameObject>();
         IsDrag = true;
         IsPower = false;
         curLength = LengthState.Normal;
@@ -103,7 +103,6 @@ public class PlainCotroller : MonoBehaviour {
     
 	void Start ()
     {
-        Vector3 v = transform.position;
         ball = Instantiate(BallObj, new Vector3(transform.position.x,
                                                            transform.position.y + 0.26f,
                                                            transform.position.z),

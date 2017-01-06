@@ -86,6 +86,7 @@ public class BallControll : MonoBehaviour {
                 transform.position = pos;
                 break;
             case CurrentMode.Shot:
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
                 break;
         }
 	}

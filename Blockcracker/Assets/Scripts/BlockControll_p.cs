@@ -1,35 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class BlockControll_p : MonoBehaviour {
 
-public class BlockControll : MonoBehaviour {
+    GameObject ItemObj;
     bool IsCrash;
-    public GameObject ItemObj;
-   
-    // Use this for initialization
+    public GameObject[] Items;
+    public Sprite[] Sprites;
     void Awake()
     {
         IsCrash = false;
     }
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == "Ball")
-        {
-            IsCrash = true;
-        }
-    }
-
-    void FixedUpdate()
-    {
+    // Update is called once per frame
+    void Update () {
         if (IsCrash)
         {
             if (ItemObj != null)
@@ -44,8 +32,22 @@ public class BlockControll : MonoBehaviour {
         }
     }
 
-    public void SetItem(GameObject item)
+
+    void OnCollisionEnter2D(Collision2D coll)
     {
-        ItemObj = item;
+        if (coll.gameObject.tag == "Ball")
+        {
+            IsCrash = true;
+        }
+    }
+
+    void SetItem()
+    {
+        ItemObj = Items[Random.Range(0, 5)];
+    }
+
+    void SetSprite()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = Sprites[1];
     }
 }

@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallControll.cs" />
     <Compile Include="Assets\Scripts\BlockControll.cs" />
+    <Compile Include="Assets\Scripts\BlockControll_p.cs" />
     <Compile Include="Assets\Scripts\GameLoader.cs" />
     <Compile Include="Assets\Scripts\ItemControll_Long.cs" />
     <Compile Include="Assets\Scripts\ItemControll_Power.cs" />
