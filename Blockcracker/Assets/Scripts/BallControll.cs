@@ -5,7 +5,7 @@ public class BallControll : MonoBehaviour {
     GameObject PlayerObj;
     Rigidbody2D rb2D;
     Sprite spr;
-    public Vector2 dir;
+    public Vector3 dir;
     public int speed;
     int mAngle;
     enum CurrentMode { Ready, Shot };
@@ -46,7 +46,7 @@ public class BallControll : MonoBehaviour {
                     mAngle = Random.Range(190, 350);
                     break;
             }
-            dir = new Vector2(Mathf.Cos(Mathf.PI * 2 * mAngle / 360), Mathf.Sin(Mathf.PI * 2 * mAngle / 360));
+            dir = new Vector3(Mathf.Cos(Mathf.PI * 2 * mAngle / 360), Mathf.Sin(Mathf.PI * 2 * mAngle / 360), 0f);
             dir *= speed;
             rb2D.velocity = dir;
             curmod = CurrentMode.Shot;
@@ -54,7 +54,7 @@ public class BallControll : MonoBehaviour {
         else
         {
             mAngle = Random.Range(45, 136);
-            dir = new Vector2(Mathf.Cos(Mathf.PI * 2 * mAngle / 360), Mathf.Sin(Mathf.PI * 2 * mAngle / 360));
+            dir = new Vector3(Mathf.Cos(Mathf.PI * 2 * mAngle / 360), Mathf.Sin(Mathf.PI * 2 * mAngle / 360), 0f);
             dir *= speed;
             rb2D.velocity = dir;
             curmod = CurrentMode.Shot;
@@ -127,7 +127,7 @@ public class BallControll : MonoBehaviour {
                 Vector2 CollisionNormal = collision.contacts[0].normal;
 
                 //Reflects a vector off the plane defined by a normal.
-                dir = Vector2.Reflect(dir, CollisionNormal);
+                dir = Vector3.Reflect(dir, CollisionNormal);
                 dir *= 1.01f;
                 //apply new direction adding force
                 rb2D.velocity = dir;

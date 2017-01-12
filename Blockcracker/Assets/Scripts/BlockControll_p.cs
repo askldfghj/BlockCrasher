@@ -27,7 +27,9 @@ public class BlockControll_p : MonoBehaviour {
                                                        gameObject.transform.position.y,
                                                        gameObject.transform.position.z - 1),
                                            gameObject.transform.rotation) as GameObject;
+                
             }
+            IsCrash = false;
             Destroy(gameObject);
         }
     }

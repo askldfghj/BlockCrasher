@@ -40,7 +40,7 @@ public class BlockControll : MonoBehaviour {
                                                        gameObject.transform.position.z - 1),
                                            gameObject.transform.rotation) as GameObject;
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
